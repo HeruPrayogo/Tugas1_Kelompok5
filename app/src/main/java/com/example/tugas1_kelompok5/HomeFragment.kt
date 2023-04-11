@@ -26,16 +26,16 @@ class HomeFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        setLayout()
         setvm = ViewModelProvider(this).get(setVM::class.java)
         setvm.getData()
+        setLayout()
         setvm.getDataFilm.observe(viewLifecycleOwner, Observer {
             adapterFilm.setItemDataFilm(it as ArrayList<DataFilm>)
         })
     }
     fun setLayout(){
         adapterFilm = AdapterFilm(ArrayList())
-        binding.rvFilm.layoutManager = GridLayoutManager(context, 2, GridLayoutManager.VERTICAL, false)
+        binding.rvFilm.layoutManager = GridLayoutManager(context, 2, GridLayoutManager.HORIZONTAL, false)
         binding.rvFilm.adapter = adapterFilm
     }
 }

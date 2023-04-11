@@ -1,47 +1,52 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:padding="10dp"
-    tools:context=".HomeFragment">
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <TextView
-        android:id="@+id/tvHome"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="1dp"
-        android:layout_toStartOf="@id/imgProfil"
-        android:gravity="center"
-        android:text="Home"
-        android:textColor="@color/black"
-        android:textSize="40sp"
-        android:textStyle="bold" />
+    <data>
+        <variable
+            name="film"
+            type="com.example.tugas1_kelompok5.DataFilm" />
+    </data>
 
-    <ImageView
-        android:id="@+id/imgProfil"
-        android:layout_width="79dp"
-        android:layout_height="61dp"
-        android:layout_alignParentRight="true"
-        android:layout_marginRight="65dp"
-        android:src="@drawable/ic_person_foreground" />
-
-    <androidx.recyclerview.widget.RecyclerView
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:id="@+id/rvFilm"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/tvHome"
-        android:layout_marginTop="20dp" />
+        tools:context=".HomeFragment">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/rvFilm"
-        android:layout_marginTop="27dp"
-        android:gravity="center"
-        android:text="ListFilm"
-        android:textColor="@color/black"
-        android:textSize="40sp"
-        android:textStyle="bold" />
+        <TextView
+            android:id="@+id/tvHome"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="116dp"
+            android:layout_marginTop="16dp"
+            android:layout_toStartOf="@id/imgProfil"
+            android:gravity="center"
+            android:text="Home"
+            android:textColor="@color/black"
+            android:textSize="40sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-</RelativeLayout>
+        <ImageView
+            android:id="@+id/imgProfil"
+            android:layout_width="79dp"
+            android:layout_height="61dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="16dp"
+            android:src="@drawable/ic_person_foreground"
+            app:layout_constraintStart_toEndOf="@+id/tvHome"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvFilm"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imgProfil" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

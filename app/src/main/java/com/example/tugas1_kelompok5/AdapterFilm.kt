@@ -7,6 +7,8 @@ import com.example.tugas1_kelompok5.databinding.ItemFilmBinding
 
 
 class AdapterFilm(var dataFilm: ArrayList<DataFilm>):RecyclerView.Adapter<AdapterFilm.ViewHolder>() {
+
+    var onClik : ((DataFilm)-> Unit)? = null
     class ViewHolder(val binding:ItemFilmBinding):RecyclerView.ViewHolder(binding.root) {
         fun bind(itemData: DataFilm){
             binding.film = itemData
@@ -20,6 +22,9 @@ class AdapterFilm(var dataFilm: ArrayList<DataFilm>):RecyclerView.Adapter<Adapte
 
     override fun onBindViewHolder(holder: AdapterFilm.ViewHolder, position: Int) {
         holder.bind(dataFilm[position])
+        holder.binding.poster.setOnClickListener {
+            onClik?.invoke(dataFilm[position])
+        }
     }
 
     override fun getItemCount(): Int {

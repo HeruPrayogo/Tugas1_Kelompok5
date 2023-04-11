@@ -26,9 +26,9 @@ class HomeFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        setLayout()
         setvm = ViewModelProvider(this).get(setVM::class.java)
         setvm.getData()
+        setLayout()
         setvm.getDataFilm.observe(viewLifecycleOwner, Observer {
             adapterFilm.setItemDataFilm(it as ArrayList<DataFilm>)
         })

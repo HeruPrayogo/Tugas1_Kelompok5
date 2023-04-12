@@ -10,7 +10,7 @@
         android:id="@+id/etNamaL"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="nama"
+        android:hint="@string/nama_login"
         android:inputType="text"
         android:minHeight="48dp" />
 
@@ -20,14 +20,14 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/etNamaL"
         android:layout_marginTop="16dp"
-        android:hint="password"
+        android:hint="@string/password_login"
         android:inputType="textPassword"
         android:minHeight="48dp" />
 
     <Button
         android:id="@+id/btnSignL"
         android:layout_marginTop="100dp"
-        android:text="Sign in"
+        android:text="@string/sign_in"
         android:layout_centerInParent="true"
         android:layout_below="@id/etPaswL"
         android:layout_width="wrap_content"

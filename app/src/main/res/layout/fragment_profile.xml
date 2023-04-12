@@ -10,7 +10,7 @@
         android:textSize="40sp"
         android:id="@+id/tvProfil"
         android:gravity="center"
-        android:text="Profil"
+        android:text="@string/profil"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
 
@@ -24,12 +24,12 @@
         android:gravity="center"
         android:textSize="30sp"
         android:textColor="@color/black"
-        android:text="Nama" />
+        android:text="@string/nama" />
     <Button
         android:id="@+id/btnLogoutP"
         android:layout_centerInParent="true"
         android:layout_alignParentBottom="true"
-        android:text="Logout"
+        android:text="@string/logout"
         android:textColor="@color/black"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>

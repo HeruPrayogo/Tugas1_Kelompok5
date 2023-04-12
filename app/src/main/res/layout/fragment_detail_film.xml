@@ -22,7 +22,7 @@
             android:id="@+id/judulfilm"
             android:textSize="20sp"
             android:layout_centerInParent="true"
-            android:text="Judul Film"
+            android:text="@string/judul_film"
             android:layout_below="@id/imgFilm"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
@@ -32,7 +32,7 @@
             android:id="@+id/relase"
             android:layout_marginLeft="10dp"
             android:layout_below="@id/judulfilm"
-            android:text="Release"
+            android:text="@string/release"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
 
@@ -41,7 +41,7 @@
             android:id="@+id/rating"
             android:layout_marginLeft="10dp"
             android:layout_below="@id/relase"
-            android:text="Rating"
+            android:text="@string/rating"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
 
@@ -50,7 +50,7 @@
             android:id="@+id/deskripsi"
             android:layout_marginLeft="10dp"
             android:layout_below="@id/rating"
-            android:text="Sinopsis"
+            android:text="@string/sinopsis"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
 

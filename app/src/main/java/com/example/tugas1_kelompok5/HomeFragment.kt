@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import com.example.tugas1_kelompok5.databinding.FragmentHomeBinding
 
@@ -26,16 +27,28 @@ class HomeFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        adapterFilm = AdapterFilm(ArrayList())
+        binding.rvFilm.layoutManager = GridLayoutManager(context, 2, GridLayoutManager.VERTICAL, false)
+        binding.rvFilm.adapter = adapterFilm
+        adapterFilm.onClick={
+            var bundle = Bundle()
+            bundle.putSerializable("BUNDLE", it)
+            findNavController().navigate(R.id.action_homeFragment_to_detailFilmFragment, bundle)
+        }
         setvm = ViewModelProvider(this).get(setVM::class.java)
         setvm.getData()
-        setLayout()
+
+        val getNama = arguments?.getString("NAMA")
         setvm.getDataFilm.observe(viewLifecycleOwner, Observer {
             adapterFilm.setItemDataFilm(it as ArrayList<DataFilm>)
         })
+        binding.imgProfil.setOnClickListener {
+            val bundle = Bundle()
+            bundle.putString("NAMA", getNama)
+            findNavController().navigate(R.id.action_homeFragment_to_profileFragment, bundle)
+        }
     }
-    fun setLayout(){
-        adapterFilm = AdapterFilm(ArrayList())
-        binding.rvFilm.layoutManager = GridLayoutManager(context, 2, GridLayoutManager.HORIZONTAL, false)
-        binding.rvFilm.adapter = adapterFilm
-    }
+
+
+
 }

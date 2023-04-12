@@ -7,15 +7,18 @@
         <variable
             name="film"
             type="com.example.tugas1_kelompok5.DataFilm" />
+        <variable
+            name="onClick"
+            type="android.view.View.OnClickListener" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content">
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
@@ -31,39 +34,7 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
-            <ImageView
-                android:id="@+id/poster2"
-                android:layout_width="190dp"
-                android:layout_height="196dp"
-                android:layout_alignParentTop="true"
-                android:layout_alignParentEnd="true"
-                app:imageResource="@{film.img}"
-                app:layout_constraintStart_toEndOf="@+id/poster"
-                app:layout_constraintTop_toTopOf="parent" />
 
-            <ImageView
-                android:id="@+id/poster3"
-                android:layout_width="190dp"
-                android:layout_height="196dp"
-                android:layout_alignParentTop="true"
-                android:layout_alignParentEnd="true"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="208dp"
-                app:imageResource="@{film.img}"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/poster" />
-
-            <ImageView
-                android:id="@+id/poster4"
-                android:layout_width="190dp"
-                android:layout_height="196dp"
-                android:layout_alignParentTop="true"
-                android:layout_alignParentEnd="true"
-                android:layout_marginStart="204dp"
-                android:layout_marginTop="208dp"
-                app:imageResource="@{film.img}"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/poster2" />
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>

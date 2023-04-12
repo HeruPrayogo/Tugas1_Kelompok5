@@ -43,8 +43,6 @@ class AdapterFilm(var dataFilm: ArrayList<DataFilm>) :
 
     @SuppressLint("NotifyDataSetChanged")
     fun setItemDataFilm(dataFilm: ArrayList<DataFilm>) {
-        this.dataFilm.clear()
         this.dataFilm.addAll(dataFilm)
-        notifyDataSetChanged()
     }
 }

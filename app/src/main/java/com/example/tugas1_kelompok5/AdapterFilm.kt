@@ -1,6 +1,5 @@
 package com.example.tugas1_kelompok5
 
-import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
@@ -41,7 +40,6 @@ class AdapterFilm(var dataFilm: ArrayList<DataFilm>) :
     }
 
 
-    @SuppressLint("NotifyDataSetChanged")
     fun setItemDataFilm(dataFilm: ArrayList<DataFilm>) {
         this.dataFilm.addAll(dataFilm)
     }
